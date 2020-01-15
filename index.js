@@ -129,6 +129,4 @@ let list = [
     },
 ]
 Sortfunc.setList(list)
-Sortfunc.makeObject()
-Sortfunc.drowobject()
 //myUser.findProperty()
