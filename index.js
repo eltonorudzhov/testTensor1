@@ -26,6 +26,109 @@ let list = [
         secondname: "Ламкин",
         age: 5
     },
+    {
+        name: "Максим",
+        secondname: "Любашкин",
+        age: 43
+    },
+    {
+        name: "Эдвард",
+        secondname: "Рукиножницы",
+        age: 51
+    },
+    {
+        name: "Захар",
+        secondname: "Ламкин",
+        age: 5
+    },
+    {
+        name: "Максим",
+        secondname: "Любашкин",
+        age: 43
+    },
+    {
+        name: "Эдвард",
+        secondname: "Рукиножницы",
+        age: 51
+    },{
+        name: "Захар",
+        secondname: "Ламкин",
+        age: 5
+    },
+    {
+        name: "Максим",
+        secondname: "Любашкин",
+        age: 43
+    },
+    {
+        name: "Эдвард",
+        secondname: "Рукиножницы",
+        age: 51
+    },{
+        name: "Захар",
+        secondname: "Ламкин",
+        age: 5
+    },
+    {
+        name: "Максим",
+        secondname: "Любашкин",
+        age: 43
+    },
+    {
+        name: "Эдвард",
+        secondname: "Рукиножницы",
+        age: 51
+    },{
+        name: "Захар",
+        secondname: "Ламкин",
+        age: 5
+    },
+    {
+        name: "Максим",
+        secondname: "Любашкин",
+        age: 43
+    },
+    {
+        name: "Эдвард",
+        secondname: "Рукиножницы",
+        age: 51
+    },{
+        name: "Захар",
+        secondname: "Ламкин",
+        age: 5
+    },
+    {
+        name: "Максим",
+        secondname: "Любашкин",
+        age: 43
+    },
+    {
+        name: "Эдвард",
+        secondname: "Рукиножницы",
+        age: 51
+    },
+    {
+        name: "Захар",
+        secondname: "Ламкин",
+        age: 5
+    },
+    {
+        name: "Максим",
+        secondname: "Любашкин",
+        age: 43
+    },
+    {
+        name: "Эдвард",
+        secondname: "Рукиножницы",
+        age: 51
+    },
+    {
+        name: "Захар",
+        secondname: "Ламкин",
+        age: 5
+    },
 ]
 Sortfunc.setList(list)
+Sortfunc.makeObject()
+Sortfunc.drowobject()
 //myUser.findProperty()
