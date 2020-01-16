@@ -1,8 +1,7 @@
-export default function findProperty(){   
-     for (let elem of document.getElementById("sortType").children) {
-          if (elem.checked)
-         {
-          return elem.value
-         }        
+export default function findProperty() {
+  for (let elem of document.getElementById("sortType").children) {
+    if (elem.checked) {
+      return elem.value;
     }
+  }
 }
