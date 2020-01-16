@@ -1,5 +1,4 @@
 export default function makeObject(list, check_property){
-    console.log("SSSSSSS", list)
     let newlist = new Map()
      switch(check_property) {
          case 'name':  
@@ -28,7 +27,6 @@ export default function makeObject(list, check_property){
            
            break
        }
-       console.log("ЫЫ",newlist)
        return newlist
-    
+       
 }

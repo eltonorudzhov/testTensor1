@@ -1,16 +1,21 @@
 
    
-  
+  #bodylist{
+      width: 400px;
+
+  }
   li {
-    list-style-type: none; 
+      text-indent: 10px;
+      font-size: 20px;
+      margin: 2px;
+    list-style-type: none;
+    border: 1px solid rgb(180, 167, 167); 
    }
    .sticky {
-    position: -webkit-sticky;
+    height: 15px;
     position: sticky;
     top: 0px;
     min-height: 2em;
-    background: rgb(80, 74, 75);
+    color: white;
+    background:  linear-gradient(to top, rgb(159, 190, 216) , rgb(130, 157, 179));
   }
-#bodylist{
-    border: 1px solid red;
-}
