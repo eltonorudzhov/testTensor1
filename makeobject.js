@@ -1,25 +1,25 @@
-export default function makeObject(list, check_property){
-    let newlist = new Map()
-     switch(check_property) {
+export default function makeObject(list, keyName){
+    let newList = new Map()
+     switch(keyName) {
          case 'name':  
          case 'secondname':  
          for (let elem of list) {
-           newlist.has(elem[check_property][0])?
-             newlist.get(elem[check_property][0]).push(elem):
-                 newlist.set(elem[check_property][0], new Array(elem) )
+           newList.has(elem[keyName][0])?
+             newList.get(elem[keyName][0]).push(elem):
+                 newList.set(elem[keyName][0], new Array(elem) )
                  
          }
 
            break
          case 'age':
-           let headerage = 10;
+           let headerAge = 10;
            for (let elem of list) {
-             while(headerage<elem[check_property])
-                headerage+=10 
+             while(headerAge<elem[keyName])
+                headerAge+=10 
            
-               newlist.has(headerage)?
-                newlist.get(headerage).push(elem):
-                 newlist.set(headerage, new Array(elem) )
+               newList.has(headerAge)?
+                newList.get(headerAge).push(elem):
+                 newList.set(headerAge, new Array(elem) )
             
          }
            break
@@ -27,6 +27,6 @@ export default function makeObject(list, check_property){
            
            break
        }
-       return newlist
-       
+       return newList
+    
 }

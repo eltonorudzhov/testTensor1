@@ -128,5 +128,5 @@ let list = [
         age: 5
     },
 ]
-Sortfunc.setList(list)
+let myUser = new Sortfunc(list, 'bodyList')
 //myUser.findProperty()

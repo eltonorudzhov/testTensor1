@@ -1,41 +1,42 @@
 import drowList from './drowlist.js'
 import makeObject from './makeobject.js'
 import findProperty from './findproperty.js'
-class Sortfunc{
-    constructor(){
-        this.maplist = new Map()
+export default class Sortfunc{
+    constructor(props,id){
+        this.id = id
+        this.mapList = new Map()
         // берем параметр сортировки де
-        this.keyname= findProperty()
-        this.list = []
-
+        this.keyName= findProperty()
+        this.list=[]
+        this.setList(props)
+        console.log(this.id)
         // обработчик выбора способа сортировки
-        let form = document.querySelector("form");   
-        form.addEventListener("submit", (event) =>{
-            let data = new FormData(form);
-            console.log(data)
-            for (const entry of data) { 
-                this.keyname = entry[1]
-            };
-            this.list=this.list.sort(this.compareList)
-            console.log(this.list)
-            this.updateRoot()
+        document.querySelector("form").addEventListener("submit", (event) =>{
+            this.hendl(document.querySelector("form"))
             event.preventDefault();
         }, false);
     }
 
+    hendl=(form)=>{    
+            let data = new FormData(form);
+            for (const entry of data) { 
+                this.keyName = entry[1]
+            };
+        this.setList(this.list)
+    }
 
     setList(list){
         this.list=list.sort(this.compareList)
+        console.log(this.list)
         this.updateRoot()
     }
     updateRoot(){
-        this.maplist = makeObject(this.list, this.keyname)
-        drowList(this.maplist);
+        this.mapList = makeObject(this.list, this.keyName)
+        drowList(this.mapList,this.keyName, this.id);
     }
     compareList =(a, b)=>{
-        if (a[this.keyname] > b[this.keyname]) return 1; 
-        if (a[this.keyname] == b[this.keyname]) return 0;
-        if (a[this.keyname] < b[this.keyname]) return -1;
+        if (a[this.keyName] > b[this.keyName]) return 1; 
+        if (a[this.keyName] == b[this.keyName]) return 0;
+        if (a[this.keyName] < b[this.keyName]) return -1;
     }
 }
-export default new Sortfunc();
