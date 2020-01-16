@@ -8,13 +8,11 @@ export default function makeObject(list, keyName) {
           ? newList.get(elem[keyName][0]).push(elem)
           : newList.set(elem[keyName][0], new Array(elem));
       }
-
       break;
     case "age":
       let headerAge = 10;
       for (let elem of list) {
         while (headerAge < elem[keyName]) headerAge += 10;
-
         newList.has(headerAge)
           ? newList.get(headerAge).push(elem)
           : newList.set(headerAge, new Array(elem));

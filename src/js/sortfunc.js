@@ -4,40 +4,36 @@ import findProperty from "./findproperty.js";
 export default class Sortfunc {
   constructor(props, id) {
     this.id = id;
-    this.mapList = new Map();
-    // берем параметр сортировки де
+    // берем параметр сортировки
     this.keyName = findProperty();
     this.list = [];
+    // создаем и сортируем список
     this.setList(props);
-    console.log(this.id);
     // обработчик выбора способа сортировки
     document.querySelector("form").addEventListener(
       "submit",
       event => {
-        this.hendl(document.querySelector("form"));
+        this.sortSelect(document.querySelector("form"));
         event.preventDefault();
       },
       false
     );
   }
-
-  hendl = form => {
+  // Выбор способа сортировки
+  sortSelect = form => {
     let data = new FormData(form);
     for (const entry of data) {
       this.keyName = entry[1];
     }
     this.setList(this.list);
   };
-
+  // создание и сортировка списка, вывод его на экран
   setList(list) {
     this.list = list.sort(this.compareList);
-    console.log(this.list);
-    this.updateRoot();
+    let mapList = makeObject(this.list, this.keyName);
+    drowList(mapList, this.keyName, this.id);
   }
-  updateRoot() {
-    this.mapList = makeObject(this.list, this.keyName);
-    drowList(this.mapList, this.keyName, this.id);
-  }
+  
   compareList = (a, b) => {
     if (a[this.keyName] > b[this.keyName]) return 1;
     if (a[this.keyName] == b[this.keyName]) return 0;

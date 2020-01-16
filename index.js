@@ -1,4 +1,4 @@
-import Sortfunc from './sortfunc.js'
+import Sortfunc from './src/js/sortfunc.js'
 
 let list = [
     {
