@@ -1,5 +1,5 @@
 import Sortfunc from './src/js/sortfunc.js'
-
+import CreateRoot from './src/js/createroot.js'
 let list = [
     {
         name: "Вова",
@@ -128,5 +128,6 @@ let list = [
         age: 5
     },
 ]
-let myUser = new Sortfunc(list, 'bodyList')
+let root = new CreateRoot('mainBodyList')
+let myUser = new Sortfunc(list, root )
 //myUser.findProperty()

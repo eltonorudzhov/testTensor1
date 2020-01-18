@@ -1,13 +1,14 @@
 // Вывод списка на экран
-export default function drowList(list, keyName, id) {
+export default function drowList(list,keyName, numberElement) {
   // Очистка поля
-  document.getElementById(id).innerHTML = "";
+  let listBody = document.getElementById('bodyList'+numberElement)
+  listBody.innerHTML = "";
   for (let elem of list.keys()) {
     // Вывод ключа
     let liKey = document.createElement("li");
     let keyStr = "<strong>" + elem + "</strong>"
     liKey.innerHTML = keyStr;
-    document.getElementById(id).append(liKey);
+    listBody.append(liKey);
     liKey.classList.add("sticky");
     // Вывод значений по ключу
     list.get(elem).forEach(element => {
@@ -19,7 +20,7 @@ export default function drowList(list, keyName, id) {
         str += " ";
       }
       liElement.innerHTML = str;
-      document.getElementById(id).append(liElement);
+      listBody.append(liElement);
     });
   }
 }
