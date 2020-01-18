@@ -19,7 +19,7 @@ export default class CreateRoot{
         td.appendChild(form);
         this.createInputs(keys,form)
         this.createButton(form)
-        this.createDiv()
+        this.createDiv(form)
         this.numberElement+=1
     }
     createForm(){
@@ -50,10 +50,10 @@ export default class CreateRoot{
         
         form.appendChild(button);
     }
-    createDiv(){
+    createDiv(form){
         let div = document.createElement('div')
         div.id = 'bodyList'+this.numberElement
-        this.trDiv.appendChild(div)
+        form.appendChild(div)
     }
 
 }
