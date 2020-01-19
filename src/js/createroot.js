@@ -13,13 +13,13 @@ export default class CreateRoot{
 
     createRoot(keys){
         let td = document.createElement('td');
-        td.id='td'+this.numberElement
+        td.id='tdSelect'+this.numberElement
         this.trSelect.appendChild(td)
         let form = this.createForm()
         td.appendChild(form);
         this.createInputs(keys,form)
         this.createButton(form)
-        this.createDiv(form)
+        this.createDiv()
         this.numberElement+=1
     }
     createForm(){
@@ -47,13 +47,15 @@ export default class CreateRoot{
         let button = document.createElement('button')
         button.type='submit'
         button.innerHTML = "OK"
-        
         form.appendChild(button);
     }
-    createDiv(form){
+    createDiv(){
+        let td = document.createElement('td');
+        td.id='tdDiv'+this.numberElement
+        this.trDiv.appendChild(td)
         let div = document.createElement('div')
         div.id = 'bodyList'+this.numberElement
-        form.appendChild(div)
+        td.appendChild(div)
     }
 
 }
