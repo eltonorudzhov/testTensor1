@@ -1,14 +1,14 @@
 import drowList from "./drowlist.js"; // рисует
 import makeObject from "./makeobject.js"; // мапит массив
 import findProperty from "./findproperty.js"; // ищет радиобаттон
-
+import mouseEvent from './mouseevent.js'
 export default class Sortfunc {
   constructor(props, root) {
     this.root = root;
     this.numberElement = root.numberElement;
-    let propsKeys = []
+    let propsKeys = [];
     for (let keys in props[0]) {
-        propsKeys.push(keys)
+      propsKeys.push(keys);
     }
     this.root.createRoot(propsKeys);
     let form = document.getElementById("form" + this.numberElement);
@@ -16,10 +16,11 @@ export default class Sortfunc {
     this.keyName = findProperty(this.numberElement);
     this.list = [];
     // создаем и сортируем список
-
     this.listBody = document.getElementById("bodyList" + this.numberElement);
     this.listBody.innerHTML = "";
     this.setList(props);
+    // событие обработки касания мыши
+    mouseEvent(this.listBody)
     // обработчик выбора способа сортировки
     form.addEventListener(
       "submit",
