@@ -6,7 +6,11 @@ export default class Sortfunc {
   constructor(props, root) {
     this.root = root;
     this.numberElement = root.numberElement;
-    this.root.createRoot(["name", "secondname", "age"]);
+    let propsKeys = []
+    for (let keys in props[0]) {
+        propsKeys.push(keys)
+    }
+    this.root.createRoot(propsKeys);
     let form = document.getElementById("form" + this.numberElement);
     // берем параметр сортировки
     this.keyName = findProperty(this.numberElement);

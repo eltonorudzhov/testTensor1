@@ -10,6 +10,7 @@ export default function makeObject(list, keyName) {
       }
       break;
     case "age":
+    case "weight":
       let headerAge = 10;
       for (let elem of list) {
         while (headerAge < elem[keyName]) headerAge += 10;
