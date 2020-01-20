@@ -1,6 +1,7 @@
 export default function makeObject(list, keyName) {
   let newList = new Map();
-  let typeKey = typeof keyName;
+  // определяем тип элемента по ключу
+  let typeKey = typeof list[0][keyName];
   switch (typeKey) {
     case "string":
       for (let elem of list) {
